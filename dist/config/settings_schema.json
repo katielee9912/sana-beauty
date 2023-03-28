@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "Dimensions 64 x 64 .png"
+      }
+    ]
+  },
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo",
+        "info": "Dimensions 64 x 64 .png"
+      }
+    ]
+  },
+  {
+    "name": "Collection Items",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Quickview"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_quickview",
+        "label": "Enable Quickview"
+      },
+      {
+        "type": "text",
+        "id": "quickview_template",
+        "label": "Quickview Template",
+        "info": "Defines the product template name that should be used for the quickview product section layout. If empty, will use the default product template."
+      },
+      {
+        "type": "text",
+        "id": "quickview_section_id",
+        "label": "Quickview Product Section ID",
+        "info": "Defines the product section ID of the Template defined above. See [Shopify Docs](https://shopify.dev/api/section-rendering#find-section-ids)"
+      }
+    ]
+  },
+  {
+    "name": "Storefront API",
+    "settings": [
+      {
+        "type": "text",
+        "id": "storefront_api_token",
+        "label": "Storefront API Access Token",
+        "info": "Requires a minimum of 'Products' and 'Selling plans' access."
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Back in Stock"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_bis",
+        "label": "Enable Back in stock",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "bis_klaviyo_api_key",
+        "label": "Klaviyo Back In Stock API Key."
+      },
+      {
+        "type": "text",
+        "id": "bis_title",
+        "label": "BIS Title",
+        "default": "SOLD OUT"
+      },
+      {
+        "type": "textarea",
+        "id": "bis_copy",
+        "label": "BIS Copy",
+        "default": "This product is currently out of stock.\nEnter your email and we will notify\nyou the moment it’s back!"
+      }
+    ]
+  },
+  {
+    "name": "Schema",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "schema_logo",
+        "label": "Company Logo",
+        "info": "Minimum dimensions: 112 x 112px"
+      },
+      {
+        "type": "textarea",
+        "id": "schema_same_as",
+        "label": "Social Media URLs",
+        "info": "Comma separated list of social media URLs"
+      }
+    ]
+  }
+]

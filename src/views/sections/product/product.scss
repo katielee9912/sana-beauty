@@ -1,0 +1,28 @@
+/* Helpers */
+@import '~@styles/helpers/variables';
+@import '~@styles/helpers/mixins';
+@import '~@styles/helpers/functions';
+@import '~@snippets/product-options/product-options';
+@import '~@snippets/product-form/product-form';
+@import '~@snippets/product-gallery/product-gallery';
+@import '~@snippets/product-media-item/product-media-item';
+@import '~@snippets/back-in-stock-form/back-in-stock-form';
+
+.product-content {
+  @include media-query($min, $medium) {
+    padding-top: 32px;
+  }
+}
+
+.product-content-block {
+  margin-bottom: 32px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.product-price {
+  display: flex;
+  gap: 12px;
+}

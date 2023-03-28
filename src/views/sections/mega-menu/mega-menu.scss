@@ -1,0 +1,46 @@
+@import '~@styles/helpers/variables';
+
+/* ============================================================================
+  Mega Menu
+============================================================================== */
+
+.megamenu {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    line-height: 1;
+  }
+
+  a:hover,
+  a:focus,
+  a:focus-within {
+    &:not(.btn, .navitem__image-item) {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-bottom: 1.5px solid $color-black;
+      }
+    }
+  }
+}
+
+.megamenu__container {
+  max-width: $site-width;
+  margin: 0;
+  gap: 40px;
+}
+
+.megamenu-navitem {
+  margin: 0;
+}

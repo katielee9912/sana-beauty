@@ -1,0 +1,170 @@
+/* ============================================================================
+  Breakpoint and grid variables
+============================================================================== */
+/* ============================================================================
+  Color variables
+============================================================================== */
+/* ============================================================================
+  Transition variables
+============================================================================== */
+/* ============================================================================
+  Font Families
+============================================================================== */
+/*
+  @font-face import your font families in /views/snippets/style-fonts/style-fonts.liquid then define global variables for them here
+*/
+/* ============================================================================
+  Font Weights
+============================================================================== */
+/* ============================================================================
+  Breakpoint mixin
+============================================================================== */
+/* ============================================================================
+  Clearfix mixin
+============================================================================== */
+/* ============================================================================
+  Visually hidden mixin
+============================================================================== */
+/* ==============================
+  Center
+=========================== */
+/* ==============================
+  No <br>
+=========================== */
+/* ============================================================================
+  Mixin | Typography
+  Font Size (px), Line Hight (px), Font Weight (400, 500, 600, etc..), Letter Spacing (%)
+  -- Set $base-font-size to match the body's font-size
+  Ex: typography(16, 24, 400, 2);
+============================================================================== */
+/* ============================================================================
+  Helper Functions
+============================================================================== */
+/* ============================================================================
+  Navigation Item
+============================================================================== */
+.navitem__container {
+  max-width: 1200px;
+  margin: 0;
+}
+
+.navitem__heading {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: 0rem;
+}
+.navitem__heading a {
+  margin-bottom: 20px;
+}
+
+.navitem__dropdown {
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 50%;
+  width: 100vw;
+  padding: 20px;
+  overflow: hidden;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  background-color: var(--background-color, #fff);
+  box-shadow: 0 5px 10px -7px #cbcbcb;
+  white-space: nowrap;
+}
+.navitem__dropdown.open {
+  visibility: visible;
+  z-index: 10;
+  opacity: 1;
+}
+
+.navitem__dropdown-container {
+  max-width: 1260px;
+  margin: auto;
+  gap: 24px;
+}
+
+.navitem__container-full {
+  width: 100%;
+}
+
+.navitem__container-flex {
+  flex: 1;
+}
+
+.navitem__promo-container {
+  width: var(--promo-container-width, 50%);
+}
+.navitem__promo-container:last-child {
+  gap: 16px;
+}
+
+.navitem__promo-block {
+  position: relative;
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  padding: 38px;
+  white-space: pre-wrap;
+}
+.navitem__promo-block img {
+  z-index: -1;
+}
+.navitem__promo-block.promo-block-count--2 p {
+  flex: 1;
+}
+
+.navitem__submenu {
+  flex: 1;
+  white-space: normal;
+}
+
+.navitem__submenu-heading {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 0rem;
+}
+
+.navitem__image-grid-container {
+  gap: 24px;
+  display: grid;
+  grid-template-columns: var(--grid-template-columns, repeat(6, 1fr));
+}
+
+.navitem__image-item {
+  aspect-ratio: 1;
+  position: relative;
+  width: 100%;
+}
+
+.navitem__buttons {
+  gap: 5px 24px;
+  flex-wrap: wrap;
+}
+.navitem__buttons .btn {
+  flex: 1;
+  padding: 20px;
+}
+.navitem__buttons .btn:first-child {
+  border-color: var(--cta-border-color-primary);
+  background-color: var(--cta-bg-color-primary);
+  color: var(--cta-text-color-primary);
+}
+.navitem__buttons .btn:first-child:hover {
+  border-color: var(--cta-border-color-hover-primary);
+  background-color: var(--cta-bg-color-hover-primary);
+  color: var(--cta-text-color-hover-primary);
+}
+.navitem__buttons .btn:last-child {
+  border-color: var(--cta-border-color-secondary);
+  background-color: var(--cta-bg-color-secondary);
+  color: var(--cta-text-color-secondary);
+}
+.navitem__buttons .btn:last-child:hover {
+  border-color: var(--cta-border-color-hover-secondary);
+  background-color: var(--cta-bg-color-hover-secondary);
+  color: var(--cta-text-color-hover-secondary);
+}

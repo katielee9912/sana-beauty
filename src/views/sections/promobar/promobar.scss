@@ -1,0 +1,21 @@
+// Helpers
+@import '~@styles/helpers/variables';
+@import '~@styles/helpers/mixins';
+@import '~@styles/helpers/functions';
+
+/* ============================================================================
+  Promobar
+============================================================================== */
+
+.promobar {
+  padding: 13px 0;
+  line-height: 1;
+
+  a {
+    transition: opacity $transition-primary;
+
+    &:hover {
+      opacity: 60%;
+    }
+  }
+}

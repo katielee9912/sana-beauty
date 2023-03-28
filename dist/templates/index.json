@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+      }
+    },
+    "5cc3805c-7d8a-463e-b6e0-3d18f4fa985c": {
+      "type": "faq",
+      "blocks": {
+        "23bca3e8-448b-4490-86d6-9ce8f95c1477": {
+          "type": "faq",
+          "settings": {
+            "open_by_default": false,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        },
+        "c3c70b37-71bc-4880-84d8-e02e656e83d3": {
+          "type": "faq",
+          "settings": {
+            "open_by_default": false,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        },
+        "24216c83-297a-4217-afd0-f38c6031b0fc": {
+          "type": "faq",
+          "settings": {
+            "open_by_default": false,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        },
+        "e8515010-8dfb-40d6-b032-c48e9b498172": {
+          "type": "faq",
+          "settings": {
+            "open_by_default": false,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        },
+        "336b65e9-b4f4-4cd6-ad8d-aea731108185": {
+          "type": "faq",
+          "settings": {
+            "open_by_default": false,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        },
+        "3a5a19b4-8540-4348-b9c5-17d3bfbde532": {
+          "type": "faq",
+          "settings": {
+            "open_by_default": false,
+            "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit?",
+            "answer": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "23bca3e8-448b-4490-86d6-9ce8f95c1477",
+        "c3c70b37-71bc-4880-84d8-e02e656e83d3",
+        "24216c83-297a-4217-afd0-f38c6031b0fc",
+        "e8515010-8dfb-40d6-b032-c48e9b498172",
+        "336b65e9-b4f4-4cd6-ad8d-aea731108185",
+        "3a5a19b4-8540-4348-b9c5-17d3bfbde532"
+      ],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "headline_position": "top",
+        "preheader": "Example preheader",
+        "title": "Headline Keep To Max Six Words",
+        "margin_top": "0",
+        "margin_top_mobile": "default",
+        "margin_bottom": "default",
+        "margin_bottom_mobile": "default",
+        "padding_top": "default",
+        "padding_top_mobile": "default",
+        "padding_bottom": "default",
+        "padding_bottom_mobile": "default"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "5cc3805c-7d8a-463e-b6e0-3d18f4fa985c"
+  ]
+}

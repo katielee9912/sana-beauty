@@ -1,0 +1,87 @@
+/* Helpers */
+@import '~@styles/helpers/variables';
+@import '~@styles/helpers/mixins';
+@import '~@styles/helpers/functions';
+
+/* ============================================================================
+  Mobile Mega Navigation
+============================================================================== */
+
+.mobile-mega-nav {
+  max-width: 600px;
+  padding: 24px;
+  background: $color-white;
+
+  li {
+    list-style: none;
+  }
+
+  a:active,
+  a:focus {
+    text-decoration: underline;
+  }
+}
+
+.mobile-mega-nav__close {
+  display: block;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  line-height: 1;
+
+  button,
+  svg {
+    display: block;
+  }
+
+  svg path {
+    fill: currentcolor;
+  }
+}
+
+.mobile-mega-nav__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 30px;
+  gap: 20px;
+}
+
+.mobile-mega-nav__links {
+  height: calc(100% + 0.1px); // Overscroll hack
+  margin: 0;
+}
+
+.mobile-mega-nav__link {
+  position: relative;
+  margin: 0;
+}
+
+.mobile-mega-nav__link-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.mobile-mega-nav__submenu {
+  margin: 10px 0 0;
+  list-style-type: none;
+
+  li {
+    border-bottom: none;
+  }
+}
+
+.mobile-mega-nav__promo {
+  position: relative;
+  margin-top: 20px;
+}
+
+.mobile-mega-nav__promo-content {
+  z-index: 1;
+  padding: 38px;
+}
+
+.mobile-mega-nav__promo-button .btn {
+  width: 100%;
+}

@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "5b46d2c1-e4ca-4ee2-9e17-d8a7ff5a7226": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "8405e082-62c6-40e6-81ff-e754dbbc2f89": {
+          "type": "description",
+          "settings": {
+            "product_desc_title": "Description"
+          }
+        },
+        "442e20a0-ac6e-40f7-ae6e-0b5ffee9424d": {
+          "type": "form",
+          "settings": {
+            "display_product_options": true,
+            "color_swatch_option_limit": 2,
+            "display_quantity_selector": true,
+            "display_subscription_options": true,
+            "one_time_label": "One time thing",
+            "subscribe_label": "Subscribe & Save",
+            "enable_bis": true,
+            "bis_title": "SOLD OUT",
+            "bis_copy": "This product is currently out of stock.\nEnter your email and we will notify\nyou the moment it’s back!",
+            "bis_cta_text": "Notifiy me please!",
+            "bis_email_placeholder": "*Email address",
+            "bis_success_message": "Thanks for joining the waitlist!",
+            "bis_error_message": "Oops. Something went wrong!\nPlease try again later."
+          }
+        }
+      },
+      "block_order": [
+        "5b46d2c1-e4ca-4ee2-9e17-d8a7ff5a7226",
+        "8405e082-62c6-40e6-81ff-e754dbbc2f89",
+        "442e20a0-ac6e-40f7-ae6e-0b5ffee9424d"
+      ],
+      "settings": {
+        "desktop_gallery_type": "simple",
+        "filter_gallery_by_color": true,
+        "content_position": "right"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

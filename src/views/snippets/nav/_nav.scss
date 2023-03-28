@@ -1,0 +1,72 @@
+/* ============================================================================
+  Navigation
+============================================================================== */
+
+.nav {
+  ul {
+    margin: 0;
+    cursor: default;
+
+    li {
+      display: block;
+      margin: 0;
+    }
+
+    > li {
+      display: inline-block;
+      position: relative;
+    }
+  }
+}
+
+.nav__link {
+  display: block;
+  padding: calc($gutter / 2);
+  font-size: 1.8rem;
+  font-weight: $weight-bold;
+  white-space: nowrap;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-primary;
+  }
+
+  &.nav__link--first {
+    padding-left: 0;
+  }
+
+  span,
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .nav--mobile & {
+    display: inline-block;
+  }
+}
+
+.nav__dropdown {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  margin: 0;
+  background-color: $color-dropdown;
+  text-align: left;
+
+  .nav__link-wrapper--has-dropdown:hover &,
+  .nav__link-wrapper--has-dropdown:focus &,
+  .nav__link-wrapper--has-dropdown.focus-within & {
+    display: block;
+  }
+
+  .nav__link-wrapper--has-dropdown:focus-within & {
+    display: block;
+  }
+
+  li {
+    width: 100%;
+  }
+}

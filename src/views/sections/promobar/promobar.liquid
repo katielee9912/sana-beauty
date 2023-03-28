@@ -1,0 +1,126 @@
+{{ 'promobar.css' | asset_url | stylesheet_tag }}
+
+<div class="promobar" role="region" aria-label="Promo Bar">
+  <div class="container">
+    <div class="row">
+      {% if section.settings.left_text != blank %}
+        <div class="d-none d-lg-block col-md-3 p--small">
+          {% if section.settings.left_link != blank %}
+            <a href="{{ section.settings.left_link }}" title="{{ section.settings.left_text }}">
+              {{ section.settings.left_text }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.left_text }}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.center_text != blank %}
+        <div class="col-lg-6 {% if section.settings.left_text == blank %}offset-lg-3{% endif %} p--small text-center">
+          {% if section.settings.center_link != blank %}
+            <a href="{{ section.settings.center_link }}" title="{{ section.settings.center_text }}">
+              {{ section.settings.center_text }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.center_text }}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.right_text != blank %}
+        <div class="d-none d-lg-block col-lg-3 p--small text-right">
+          {% if section.settings.right_link != blank %}
+            <a href="{{ section.settings.right_link }}" title="{{ section.settings.right_text }}">
+              {{ section.settings.right_text }}
+            </a>
+          {% else %}
+            <span>
+              {{ section.settings.right_text }}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .promobar {
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .promobar span,
+  .promobar a {
+    color: {{ section.settings.text_color }};
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Promobar",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Left Text"
+      },
+      {
+        "type": "text",
+        "id": "left_text",
+        "label": "Left Text"
+      },
+      {
+        "type": "url",
+        "id": "left_link",
+        "label": "Left Link"
+      },
+      {
+        "type": "header",
+        "content": "Center Text"
+      },
+      {
+        "type": "text",
+        "id": "center_text",
+        "label": "Center Text"
+      },
+      {
+        "type": "url",
+        "id": "center_link",
+        "label": "Center Link"
+      },
+      {
+        "type": "header",
+        "content": "Right Text"
+      },
+      {
+        "type": "text",
+        "id": "right_text",
+        "label": "Right Text"
+      },
+      {
+        "type": "url",
+        "id": "right_link",
+        "label": "Right Link"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Background Color",
+        "default": "#F5F5F5"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000000"
+      }
+    ]
+  }
+{% endschema %}
