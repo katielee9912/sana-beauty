@@ -12,12 +12,10 @@
   background-color: rgb(var(--color-background));
   line-height: 1;
 
-  a {
+  a,
+  span {
     transition: opacity $transition-primary;
     color: rgb(var(--color-foreground));
-
-    &:hover {
-      opacity: 60%;
-    }
+    cursor: default;
   }
 }
