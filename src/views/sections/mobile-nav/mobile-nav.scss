@@ -37,13 +37,13 @@
 .mobile-nav__links {
   height: calc(100% + 0.1px); // Overscroll hack
   margin: 0;
-  padding: 64px 0;
+  padding: 50px 0 64px;
 }
 
 .mobile-nav__link {
   position: relative;
   margin: 0;
-  padding: 14px 0;
+  padding: 22px 0;
   border-bottom: 1px solid $color-border;
   line-height: 1;
 
@@ -62,7 +62,8 @@
   margin: 20px 0 0 20px;
   list-style-type: none;
 
-  li {
+  li:not(:last-child) {
+    margin-bottom: 20px;
     border-bottom: none;
   }
 }

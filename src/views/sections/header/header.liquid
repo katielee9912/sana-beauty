@@ -1,19 +1,7 @@
 <header class="site-header" role="banner" aria-label="Site Header">
   <div class="container">
     <div class="row">
-      <div class="col-2 col-lg-5 align-self-center">
-        <popup-toggle data-target="mobile-nav" data-action="open">
-          <button class="d-lg-none" type="button" aria-label="Menu" data-drawer-toggle="menu">
-            {% render 'icon-menu' %}
-          </button>
-        </popup-toggle>
-
-        <div class="d-none d-lg-flex">
-          {% render 'nav', menu: section.settings.menu %}
-        </div>
-      </div>
-
-      <div class="col-8 col-lg-2 align-self-center text-center">
+      <div class="col-lg-2 d-none d-lg-block align-self-center text-center">
         <div class="site-header__logo">
           <a href="{{ routes.root_url }}" title="{{ shop.name }} Logo">
             {% if section.settings.logo != blank %}
@@ -25,7 +13,31 @@
         </div>
       </div>
 
-      <div class="site-header__controls col-2 col-lg-5 align-self-center text-right">
+      <div class="col-2 col-lg-8 align-self-center">
+        <popup-toggle data-target="mobile-nav" data-action="open">
+          <button class="d-lg-none" type="button" aria-label="Menu" data-drawer-toggle="menu">
+            {% render 'icon-menu' %}
+          </button>
+        </popup-toggle>
+
+        <div class="d-none d-lg-flex justify-content-center">
+          {% render 'nav', menu: section.settings.menu %}
+        </div>
+      </div>
+
+      <div class="col-8 d-lg-none align-self-center text-center">
+        <div class="site-header__logo">
+          <a href="{{ routes.root_url }}" title="{{ shop.name }} Logo">
+            {% if section.settings.logo != blank %}
+              <img src="{{ section.settings.logo | img_url: '1024x1024' }}" alt="{{ shop.name }} Logo">
+            {% else %}
+              <h2 class="heading-4">{{ shop.name }}</h2>
+            {% endif %}
+          </a>
+        </div>
+      </div>
+
+      <div class="site-header__controls col-2 col-lg-2 align-self-center text-right">
         {% if section.settings.secondary_links != blank %}
           <div class="site-header__secondary-links d-none d-lg-block">
             <div class="row">
@@ -48,10 +60,6 @@
         {% endif %}
 
         <div class="row">
-          <div class="col col-lg-auto d-none d-lg-block align-self-center">
-            {% render 'search-bar' %}
-          </div>
-
           <div class="col col-lg-auto d-lg-block align-self-center">
             {% if settings.ajaxcart == true %}
               <popup-toggle data-target="ajaxcart" data-action="open">
