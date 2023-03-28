@@ -1,7 +1,7 @@
 <header class="site-header" role="banner" aria-label="Site Header">
   <div class="container">
     <div class="row">
-      <div class="col-8 col-lg-2 align-self-center text-center">
+      <div class="col-lg-2 d-none d-lg-block align-self-center text-center">
         <div class="site-header__logo">
           <a href="{{ routes.root_url }}" title="{{ shop.name }} Logo">
             {% if section.settings.logo != blank %}
@@ -22,6 +22,18 @@
 
         <div class="d-none d-lg-flex justify-content-center">
           {% render 'nav', menu: section.settings.menu %}
+        </div>
+      </div>
+
+      <div class="col-8 d-lg-none align-self-center text-center">
+        <div class="site-header__logo">
+          <a href="{{ routes.root_url }}" title="{{ shop.name }} Logo">
+            {% if section.settings.logo != blank %}
+              <img src="{{ section.settings.logo | img_url: '1024x1024' }}" alt="{{ shop.name }} Logo">
+            {% else %}
+              <h2 class="heading-4">{{ shop.name }}</h2>
+            {% endif %}
+          </a>
         </div>
       </div>
 
