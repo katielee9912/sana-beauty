@@ -57,71 +57,13 @@
   <body id="{{ page_title | handle }}" class="template-{{ template.name | handle }} {% if template.suffix %}template-{{ template.suffix }}{% endif %}" data-site-body>
     <a class="visually-hidden skip-link" href="#siteContent" title="{{ 'general.accessibility.skip_to_content' | t }}">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
-    {% section 'mobile-mega-menu' %}
+    {% section 'mobile-nav' %}
     {% section 'ajaxcart' %}
 
     <div class="site-overlay" data-site-overlay></div>
 
     {% section 'promobar' %}
-
-    <header class="site-header" role="banner" aria-label="Site Header">
-      <div class="container">
-        <div class="row">
-          <div class="col-2 col-lg-5 align-self-center">
-            <popup-toggle data-target="mobile-mega-nav" data-action="open">
-              <button class="d-lg-none" type="button" aria-label="Menu" data-drawer-toggle="menu">
-                {% render 'icon-menu' %}
-              </button>
-            </popup-toggle>
-          </div>
-
-          <div class="col-8 col-lg-2 align-self-center text-center">
-            <div class="site-header__logo">
-              <a href="{{ routes.root_url }}" title="{{ shop.name }} Logo">
-                {% if settings.logo != blank %}
-                  <img src="{{ settings.logo | img_url: '1024x1024' }}" alt="{{ shop.name }} Logo">
-                {% else %}
-                  <h2 class="heading-4">{{ shop.name }}</h2>
-                {% endif %}
-              </a>
-            </div>
-          </div>
-
-          <div class="site-header__controls col-2 col-lg-5 align-self-center text-right">
-            <div class="row">
-              <div class="col col-lg-auto d-none d-lg-block align-self-center">
-                {% render 'search-bar' %}
-              </div>
-
-              <div class="col col-lg-auto d-lg-block align-self-center">
-                {% if settings.ajaxcart == true %}
-                  <popup-toggle data-target="ajaxcart" data-action="open">
-                    <button type="button" aria-label="Cart">
-                      {% render 'icon-cart' %}
-                    </button>
-                  </popup-toggle>
-                {% else %}
-                  <a href="{{ routes.cart_url }}" title="{{ 'cart.general.title' | t }}">
-                    {% render 'icon-cart' %}
-                  </a>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {% comment %} Mega Menu {% endcomment %}
-        <div class="d-none d-lg-flex">
-          <mega-menu class="megamenu d-none d-lg-block" role="navigation" aria-label="Mega menu">
-
-            {% comment %} Level one menu {% endcomment %}
-            <ul class="megamenu__container container d-flex justify-content-center" role="menu">
-              {% sections 'navigation-group' %}
-            </ul>
-          </mega-menu>
-        </div>
-      </div>
-    </header>
+    {% section 'header' %}
 
     <div class="site-container" data-site-container>
       <main id="siteContent" class="site-content" role="main">
