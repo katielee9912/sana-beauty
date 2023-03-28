@@ -9,13 +9,13 @@
 
 .promobar {
   padding: 13px 0;
+  background-color: rgb(var(--color-background));
   line-height: 1;
 
-  a {
+  a,
+  span {
     transition: opacity $transition-primary;
-
-    &:hover {
-      opacity: 60%;
-    }
+    color: rgb(var(--color-foreground));
+    cursor: default;
   }
 }
