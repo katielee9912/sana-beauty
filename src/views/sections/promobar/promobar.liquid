@@ -1,6 +1,6 @@
 {{ 'promobar.css' | asset_url | stylesheet_tag }}
 
-<div class="promobar" role="region" aria-label="Promo Bar">
+<div class="promobar color-{{ section.settings.color_scheme }}" role="region" aria-label="Promo Bar">
   <div class="container">
     <div class="row">
       {% if section.settings.left_text != blank %}
@@ -47,17 +47,6 @@
     </div>
   </div>
 </div>
-
-<style>
-  .promobar {
-    background-color: {{ section.settings.background_color }};
-  }
-
-  .promobar span,
-  .promobar a {
-    color: {{ section.settings.text_color }};
-  }
-</style>
 
 {% schema %}
   {
@@ -110,22 +99,32 @@
         "content": "Colors"
       },
       {
-        "type": "color",
-        "id": "background_color",
-        "label": "Background Color",
-        "default": "#F5F5F5"
-      },
-      {
-        "type": "color",
-        "id": "text_color",
-        "label": "Text Color",
-        "default": "#000000"
-      },
-      {
-        "type": "color_scheme",
+        "type": "select",
         "id": "color_scheme",
-        "default": "scheme_1",
-        "label": "Color Scheme"
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          },
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          },
+          {
+            "value": "inverse",
+            "label": "t:sections.all.colors.inverse.label"
+          }
+        ],
+        "default": "background-1",
+        "label": "t:sections.all.colors.label"
       }
     ]
   }
