@@ -1,0 +1,121 @@
+<script src="{{ 'home-hero.js' | asset_url }}" defer="defer"></script>
+{{ 'home-hero.css' | asset_url | stylesheet_tag }}
+
+<div class="home-hero home-hero--{{ section.id }}" role="region" aria-label="Hero">
+  <div class="container">
+    <div class="home-hero__content">
+      {% render 'section-header',
+        section_name: 'home-hero',
+        preheader: section.settings.preheader,
+        title: section.settings.title,
+        copy: section.settings.copy,
+        classes: 'text-left'
+      %}
+
+      {% if section.settings.cta_link != blank %}
+        <div class="home-hero__button">
+          <a href="{{ section.settings.cta_link }}" class="btn" title="{{ section.settings.cta_text }}">
+            {{ section.settings.cta_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'badge' and block.settings.image != blank %}
+        {% render 'image', image: block.settings.image, classes: 'home-hero__badge d-none d-md-block' %}
+      {% endif %}
+
+      {% style %}
+        .home-hero__badge {
+          --position-x: {{ block.settings.x_pos }}%;
+          --position-y: {{ block.settings.y_pos }}%;
+          --badge-width: {{ block.settings.badge_width }}px;
+        }
+      {% endstyle %}
+    {% endfor %}
+  </div>
+
+  {%- liquid
+    if section.settings.bg_image_mobile != blank
+      assign image_classes = 'd-none d-md-block'
+      render 'image', image: section.settings.bg_image_mobile, background: true, classes: 'd-md-none'
+    endif
+    if section.settings.bg_image != blank
+      render 'image', image: section.settings.bg_image, background: true, classes: image_classes | default: ''
+    endif
+  -%}
+
+  {% render 'section-spacing', section_name: 'featured-articles' %}
+
+  {% style %}
+    .home-hero--{{ section.id }} {
+      --cta-text-color: {{ section.settings.cta_text_color }};
+      --cta-bg-color: {{ section.settings.cta_bg_color }};
+      --cta-border-color: {{ section.settings.cta_border_color }};
+      --cta-text-color-hover: {{ section.settings.cta_text_color_hover }};
+      --cta-bg-color-hover: {{ section.settings.cta_bg_color_hover }};
+      --cta-border-color-hover: {{ section.settings.cta_border_color_hover }};
+    }
+  {% endstyle %}
+</div>
+
+{% schema %}
+  {
+    "name": "Home Hero",
+    "settings": [
+      FRAGMENT.basic-content,
+      FRAGMENT.cta-button,
+      FRAGMENT.bg-image("Image Size: 1920x1080" || "Image Size: 375x740"),
+      FRAGMENT.section-spacing
+    ],
+    "blocks": [
+      {
+        "type": "badge",
+        "name": "Badge",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "header",
+            "content": "Position | Desktop"
+          },
+          {
+            "type": "range",
+            "id": "x_pos",
+            "label": "X Position | Desktop",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "default": 80
+          },
+          {
+            "type": "range",
+            "id": "y_pos",
+            "label": "Y Position | Desktop",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%",
+            "default": 80
+          },
+          {
+            "type": "range",
+            "id": "badge_width",
+            "label": "Width | Desktop",
+            "min": 70,
+            "max": 200,
+            "step": 10,
+            "unit": "px",
+            "default": 100
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

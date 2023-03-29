@@ -127,7 +127,7 @@ sub {
 
 @mixin h5-lg {
   text-transform: uppercase;
-  @include typography(24, 24, $weight-bold);
+  @include typography(20, 24, 700);
 }
 
 /* ============================================================================
