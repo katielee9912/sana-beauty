@@ -2,10 +2,49 @@
   "sections": {
     "home-hero": {
       "type": "home-hero",
+      "blocks": {
+        "0f3335e7-fe28-4764-98bf-bb586662579a": {
+          "type": "badge",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/badge.png",
+            "x_pos": 80,
+            "y_pos": 59,
+            "badge_width": 180
+          }
+        }
+      },
+      "block_order": [
+        "0f3335e7-fe28-4764-98bf-bb586662579a"
+      ],
       "settings": {
+        "preheader": "Beauty and skincare",
+        "title": "Unleash Your Natural Radiance With Sana",
+        "copy": "Discover the secrets to a radiant and flawless complexion with our naturally formulated products and unlock your natural beauty today.",
+        "cta_text": "Shop Products",
+        "cta_link": "shopify:\/\/collections",
+        "cta_text_color": "#000000",
+        "cta_bg_color": "rgba(0,0,0,0)",
+        "cta_border_color": "#000000",
+        "cta_text_color_hover": "#fffdfc",
+        "cta_bg_color_hover": "#000000",
+        "cta_border_color_hover": "#000000",
+        "bg_image": "shopify:\/\/shop_images\/model-hero.png",
+        "bg_image_mobile": "shopify:\/\/shop_images\/hero-mobile_2.png",
+        "margin_top": "0",
+        "margin_top_mobile": "default",
+        "margin_bottom": "default",
+        "margin_bottom_mobile": "default",
+        "padding_top": "default",
+        "padding_top_mobile": "default",
+        "padding_bottom": "default",
+        "padding_bottom_mobile": "default"
       }
+    }
+  },
+  "order": [
+    "home-hero"
     },
-    "ed1a18c7-323b-4c0a-8ad2-7730e2dea7eb": {
+    "54f2fa59-c80c-49ba-a1f9-f030a7cf8201": {
       "type": "featured-collection",
       "settings": {
         "collection": "best-seller",
@@ -14,11 +53,11 @@
         "copy": "",
         "cta_text": "Shop Best Sellers",
         "cta_link": "shopify:\/\/collections\/best-seller",
-        "cta_text_color": "#FFFFFF",
-        "cta_bg_color": "#000000",
+        "cta_text_color": "#000000",
+        "cta_bg_color": "#fffdfc",
         "cta_border_color": "#000000",
-        "cta_text_color_hover": "#000000",
-        "cta_bg_color_hover": "#FFFFFF",
+        "cta_text_color_hover": "#fffdfc",
+        "cta_bg_color_hover": "#000000",
         "cta_border_color_hover": "#000000",
         "color_scheme": "background-1",
         "margin_top": "0",
@@ -34,6 +73,6 @@
   },
   "order": [
     "home-hero",
-    "ed1a18c7-323b-4c0a-8ad2-7730e2dea7eb"
+    "54f2fa59-c80c-49ba-a1f9-f030a7cf8201"
   ]
 }
