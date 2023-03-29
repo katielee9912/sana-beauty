@@ -8,13 +8,10 @@ All of the nitty-gritty stuff is already taken care of, so you can focus on the 
 
 The following steps assume you have [Yarn](https://yarnpkg.com/en/docs/install#mac-stable) installed on your machine and you have setup [SSH keys with GitHub](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh)
 
-Read more [2.0 Starter Theme Info](https://www.notion.so/pointer/2-0-Theme-Info-ea9018bb98cd4656a0a27ef8d1327577)
 
-1. [Generate a new repo based on this template](https://github.com/pointercreative/Pointer-Starter-Theme/generate). It should be a private repo.
+1. Generate a new private repo.
 
-2. Open your terminal and navigate to the directory where your projects live. Clone the new repo to your local machine:
-
-   `git clone git@github.com:pointercreative/new-repo-name.git`
+2. Open your terminal and navigate to the directory where your projects live. Clone the new repo to your local machine.
 
 3. Navigate into the folder in your terminal
    `cd new-repo-name`
@@ -106,32 +103,6 @@ To add custom fonts to your project take the following steps:
 
 4. Start using your newly declared font variable
 
-### Icons
-
-Icons added to `/src/assets/svgs/` will automatically generate a new snippet with the prefix `icon-`
-
-To add a new icon to your project take the following steps:
-
-1. Add your icon to `/src/assets/svgs/`
-
-2. Add `{% render 'icon-name' %}` where you want your icon to appear.
-
-### Javascript
-
-Javascript should be added to `/src/scripts/`
-
-**Note:** If you use a `<script>` tag within a template always wrap your code in a `DOMContentLoaded` function
-
-Example:
-
-```
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Woohoo!');
-    });
-</script>
-```
-
 ### Syncing code
 
 If you suspect code changes have been made to the production theme you will have to sync those changes to your `/src/` folder
@@ -167,15 +138,3 @@ To sync the code take the following steps:
 14. Run `git commit -m 'Resync with shop'`
 
 15. Run `git push`
-
-## New Section From Template
-
-Use the `yarn new-section` command to generate a new section from one of the templates availiable in [Pointer Section Templates](https://github.com/pointercreative/pointer-section-templates).
-
-Setup:
-
-1. Copy `github-token.yml.example` and rename it to `github-token.yml`
-
-2. Generate a GitHub [Personal Access Token](https://github.com/settings/tokens) and replace 'example_github_token' with your generated token in `github-token.yml`.
-
-3. Run `yarn new-section` and follow prompts
