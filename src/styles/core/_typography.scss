@@ -90,7 +90,7 @@ sub {
 
 /* H2 */
 @mixin h2 {
-  @include typography(54, 54, $weight-bold);
+  @include typography(44, 44, $weight-bold);
 }
 
 @mixin h2-md {
@@ -98,7 +98,7 @@ sub {
 }
 
 @mixin h2-lg {
-  @include typography(80, 80, $weight-bold);
+  @include typography(54, 54, $weight-bold);
 }
 
 /* H3 */
@@ -107,7 +107,7 @@ sub {
 }
 
 @mixin h3-lg {
-  @include typography(54, 54, $weight-bold);
+  @include typography(44, 44, $weight-bold);
 }
 
 /* H4 */

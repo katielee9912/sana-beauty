@@ -2,7 +2,7 @@
   "name": "starter-theme",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "Pointer Starter Theme",
+  "description": "Starter Theme",
   "repository": "",
   "main": "webpack.config.js",
   "scripts": {
