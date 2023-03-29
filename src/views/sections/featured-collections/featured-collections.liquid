@@ -1,0 +1,73 @@
+<script src="{{ 'featured-collections.js' | asset_url }}" defer="defer"></script>
+{{ 'featured-collections.css' | asset_url | stylesheet_tag }}
+
+<div class="featured-collections featured-collections--{{ section.id }}" role="region" aria-label="Featured Collections"
+>
+  <div class="container">
+    {% render 'section-header',
+      section_name: 'featured-collections',
+      preheader: section.settings.preheader,
+      title: section.settings.title,
+      copy: section.settings.copy,
+    %}
+
+    <div class="featured-collections__blocks d-flex flex-column flex-md-row">
+      {% for block in section.blocks %}
+        {% if block.settings.collection != blank %}
+          {% assign collection = block.settings.collection %}
+          <div class="featured-collections__block featured-collections__block--{{ block.id }}">
+            <div class="featured-collections__image">
+              {% render 'image', image: collection.featured_image, background: true %}
+            </div>
+
+            <a href="{{ collection.url }}" class="btn" title="{{ collection.title }}">
+              Shop {{ collection.title }}
+            </a>
+          </div>
+
+          {% style %}
+            .featured-collections__block--{{ block.id }} {
+              --background-color: {{ block.settings.bg_color }};
+            }
+          {% endstyle %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% render 'section-spacing', section_name: 'featured-collections' %}
+
+{% schema %}
+  {
+    "settings": [
+      FRAGMENT.basic-content,
+      FRAGMENT.color-scheme,
+      FRAGMENT.section-spacing
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          },
+          {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background Color"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Featured Collections"
+      }
+    ]
+  }
+{% endschema %}
