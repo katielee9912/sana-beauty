@@ -33,7 +33,18 @@
   gap: 16px;
 
   h2 {
-    @include typography(80, 80, $weight-bold);
+    @include typography(60, 64, $weight-bold);
+
+    @include media-query($min, $medium) {
+      @include typography(68, 70, $weight-bold);
+    }
+  }
+
+  p,
+  a {
+    @include media-query($max, $medium) {
+      @include typography(17, 24, $weight-bold);
+    }
   }
 }
 
