@@ -236,6 +236,7 @@
       "selection_unavailable": "Selected options not available",
       "add_to_cart": "Add to Cart",
       "buy_now": "Buy it Now",
+      "see_product": "See Product",
       "quantity_limit_reached": "Only {{ limit }} available",
       "delivery_options": "Delivery options"
     },

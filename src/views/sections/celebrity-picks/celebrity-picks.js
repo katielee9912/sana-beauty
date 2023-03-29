@@ -1,0 +1,1 @@
+import './celebrity-picks.scss'
