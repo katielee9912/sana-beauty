@@ -1,0 +1,115 @@
+<script src="{{ 'celebrity-picks.js' | asset_url }}" defer="defer"></script>
+{{ 'celebrity-picks.css' | asset_url | stylesheet_tag }}
+
+<div class="celebrity-picks celebrity-picks--{{ section.id }}" role="region" aria-label="Celebrity Picks">
+  <div class="celebrity-picks__wrapper flex-column flex-md-row">
+
+    <div class="celebrity-picks__container">
+      <div class="celebrity-picks__content">
+        {% render 'section-header',
+          section_name: 'celebrity-picks',
+          preheader: section.settings.preheader,
+          title: section.settings.title,
+          copy: section.settings.copy,
+          classes: 'text-center text-md-left'
+        %}
+
+        <div class="celebrity-picks__products">
+          {% for block in section.blocks %}
+            {% if block.settings.product != blank %}
+              {% assign product = block.settings.product %}
+
+              <div href="{{ product.url }}"
+                class="celebrity-picks__product-card"
+                title="{{ product.title }}"
+              >
+                <div class="celebrity-picks__product-image">
+                  {% render 'image', image: product.featured_image, background: true %}
+                </div>
+
+                <p class="celebrity-picks__product-title">
+                  {{ product.title }}
+                </p>
+
+                <div class="product-card__rating">
+                  {% render 'star-rating', rating: product.metafields.custom.rating %}
+                </div>
+
+                <div class="celebrity-picks__product-price">
+                  {% assign original_price = product.price | money %}
+                  {% assign sale_price = product.compare_at_price | money %}
+
+                  {% if sale_price != blank or sale_price == original_price %}
+                    <span class="sale-price">
+                      {{- product.price | money -}}
+                    </span>
+
+                    <span class="compare-price">
+                      <span class="visually-hidden">
+                        {{- 'general.accessibility.original_price' | t -}}
+                      </span>
+                      <s aria-hidden="true">
+                        {{- sale_price -}}
+                      </s>
+                    </span>
+                  {% else %}
+
+                    {{- product.price | money -}}
+                  {% endif %}
+                </div>
+
+                <a href="{{ product.url}}" class="btn" title="{{ product.title }}">
+                  {{ products.product.see_product | t }}
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% if section.settings.image != blank %}
+      <div class="celebrity-picks__image">
+        {% render 'image', image: section.settings.image, background: true %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% render 'section-spacing', section_name: 'celebrity-picks' %}
+
+{% style %}
+  .product-card--{{ block.id }} {
+    --background-color: {{ block.settings.bg_color }}
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "settings": [
+      FRAGMENT.basic-content,
+      FRAGMENT.image("Image Size: 1440x900" || "Image Size: 375x800"),
+      FRAGMENT.color-scheme,
+      FRAGMENT.section-spacing
+    ],
+    "blocks":[
+      {
+        "type": "product",
+        "name": "Product",
+        "limit": 3,
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Celebrity Picks"
+      }
+    ]
+  }
+{% endschema %}
