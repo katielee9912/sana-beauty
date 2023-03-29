@@ -1,0 +1,46 @@
+{%- comment -%}
+  PARAMETERS:
+  product : product object (requried)
+  classes: additional classes
+  attributes: additional attributes
+
+  USAGE:
+  {% render 'product-card' with
+    product: product,
+    classes: classes,
+    attributes: attributes
+  %}
+{%- endcomment -%}
+
+<div class="product-card{% if classes != blank %} {{ classes }}{% endif %}" {{ attributes }}>
+  <div class="product-card__container">
+    <div class="product-card__image">
+      {% render 'image', image: product.image, background: true %}
+    </div>
+    <div class="product-card__data">
+      <p class="product-card__title">
+        {{ product.title }}
+      </p>
+      <div>
+        {% render 'star-rating', rating: product.metafields.custom.rating %}
+      </div>
+      <div class="product-price">
+        {{- variant.price | money -}}
+
+        {% assign original_price = variant.compare_at_price | money %}
+        {% assign sale_price = variant.price | money %}
+        <div class="product-price__compare-price {% unless variant.compare_at_price > variant.price %}d-none{% endunless %}"
+          data-product-compare-price-wrap
+        >
+          <span class="visually-hidden">
+            {{- 'general.accessibility.original_price' | t -}}
+          </span>
+
+          <s aria-hidden="true" class="product__price product__price--compare" data-product-compare-price>
+            {{- variant.compare_at_price | money -}}
+          </s>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
