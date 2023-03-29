@@ -4,9 +4,36 @@
       "type": "home-hero",
       "settings": {
       }
+    },
+    "ed1a18c7-323b-4c0a-8ad2-7730e2dea7eb": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "best-seller",
+        "preheader": "",
+        "title": "Our Best Sellers",
+        "copy": "",
+        "cta_text": "Shop Best Sellers",
+        "cta_link": "shopify:\/\/collections\/best-seller",
+        "cta_text_color": "#FFFFFF",
+        "cta_bg_color": "#000000",
+        "cta_border_color": "#000000",
+        "cta_text_color_hover": "#000000",
+        "cta_bg_color_hover": "#FFFFFF",
+        "cta_border_color_hover": "#000000",
+        "color_scheme": "background-1",
+        "margin_top": "0",
+        "margin_top_mobile": "default",
+        "margin_bottom": "default",
+        "margin_bottom_mobile": "default",
+        "padding_top": "default",
+        "padding_top_mobile": "default",
+        "padding_bottom": "default",
+        "padding_bottom_mobile": "default"
+      }
     }
   },
   "order": [
-    "home-hero"
+    "home-hero",
+    "ed1a18c7-323b-4c0a-8ad2-7730e2dea7eb"
   ]
 }

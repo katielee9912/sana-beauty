@@ -13,11 +13,11 @@
 }
 
 .home-hero__content {
-  padding: 0 0 60px;
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  width: 50%;
+  padding: 0 0 60px;
   gap: 20px;
 
   @include media-query($max, $medium) {
@@ -31,6 +31,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  h2 {
+    @include typography(80, 80, $weight-bold);
+  }
 }
 
 .home-hero__button {
@@ -48,9 +52,9 @@
 }
 
 .home-hero__badge {
-  width: var(--badge-width, 75px);
-  aspect-ratio: 1;
   position: absolute;
   top: var(--position-y);
   left: var(--position-x);
+  width: var(--badge-width, 75px);
+  aspect-ratio: 1;
 }
