@@ -31,6 +31,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  h2 {
+    @include typography(80, 80, $weight-bold);
+  }
 }
 
 .home-hero__button {
