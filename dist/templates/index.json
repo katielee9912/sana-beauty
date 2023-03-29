@@ -39,12 +39,10 @@
         "padding_bottom": "default",
         "padding_bottom_mobile": "default"
       }
-<<<<<<< Updated upstream
     }
   },
   "order": [
     "home-hero"
-=======
     },
     "54f2fa59-c80c-49ba-a1f9-f030a7cf8201": {
       "type": "featured-collection",
@@ -76,6 +74,5 @@
   "order": [
     "home-hero",
     "54f2fa59-c80c-49ba-a1f9-f030a7cf8201"
->>>>>>> Stashed changes
   ]
 }
