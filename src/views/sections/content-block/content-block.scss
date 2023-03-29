@@ -1,0 +1,54 @@
+/* Helpers */
+@import '~@styles/helpers/variables';
+@import '~@styles/helpers/mixins';
+@import '~@styles/helpers/functions';
+
+/* ============================================================================
+  Content Block
+============================================================================== */
+
+.content-block {
+  background-color: var(--background-color, #fff);
+
+  .newsletter-form {
+    max-width: 1000px;
+    margin: auto;
+    padding: 10px 40px 40px;
+  }
+
+  .newsletter-form__container {
+    display: flex;
+    gap: 6px;
+
+    @include media-query($max, $medium) {
+      flex-direction: column;
+    }
+  }
+
+  .newsletter-form__content {
+    flex: 1;
+
+    input {
+      border: 1px solid $color-black;
+    }
+  }
+
+  .newsletter-form__submit {
+    @include media-query($min, $medium) {
+      width: 20%;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}
+
+.content-block__header {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 40px 10px;
+  gap: 10px;
+}

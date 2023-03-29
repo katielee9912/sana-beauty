@@ -1,0 +1,39 @@
+<script src="{{ 'content-block.js' | asset_url }}" defer="defer"></script>
+{{ 'content-block.css' | asset_url | stylesheet_tag }}
+
+<div class="content-block content-block--{{ section.id }}" role="region" aria-label="Content Block">
+  <div class="container">
+
+    {% render 'section-header',
+      section_name: 'content-block',
+      preheader: section.settings.preheader,
+      title: section.settings.title,
+      copy: section.settings.copy
+    %}
+
+    {% render 'newsletter-form' %}
+  </div>
+</div>
+
+{% render 'section-spacing', section_name: 'content-block' %}
+
+{% style %}
+  .content-block--{{ section.id }} {
+    --background-color: {{ section.settings.bg_color }}
+  }
+{% endstyle %}
+
+{% schema %}
+  {
+    "settings": [
+      FRAGMENT.basic-content,
+      FRAGMENT.bg-color("#FFFDFC"),
+      FRAGMENT.section-spacing
+    ],
+    "presets": [
+      {
+        "name": "Content Block"
+      }
+    ]
+  }
+{% endschema %}
