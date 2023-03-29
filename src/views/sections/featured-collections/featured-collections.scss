@@ -1,0 +1,34 @@
+/* Helpers */
+@import '~@styles/helpers/variables';
+@import '~@styles/helpers/mixins';
+@import '~@styles/helpers/functions';
+
+/* ============================================================================
+  Featured Collections
+============================================================================== */
+
+.featured-collections__blocks {
+  justify-content: center;
+  margin-top: 40px;
+  gap: 30px;
+}
+
+.featured-collections__block {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--background-color, #fff);
+
+  .btn {
+    width: 100%;
+    margin-top: 25px;
+  }
+}
+
+.featured-collections__image {
+  position: relative;
+  aspect-ratio: 1;
+
+  img {
+    z-index: 1;
+  }
+}
