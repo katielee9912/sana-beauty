@@ -1,8 +1,13 @@
 <footer class="site-footer medium-down--text-center" role="contentinfo" aria-label="Site Footer">
   <div class="container">
     <div class="row">
+      <div class="col-5">
+        <h2 class="heading-3">{{ section.settings.title }}</h2>
+        <p class="p--small">{{ section.settings.copy }}</p>
+      </div>
+
       <div class="col">
-        <h3>{{ linklists[section.settings.menu_1].title }}</h3>
+        <h3 class="heading-5">{{ linklists[section.settings.menu_1].title }}</h3>
 
         <ul class="no-bullets">
           {% for link in linklists[section.settings.menu_1].links %}
@@ -12,7 +17,7 @@
       </div>
 
       <div class="col">
-        <h3>{{ linklists[section.settings.menu_2].title }}</h3>
+        <h3 class="heading-5">{{ linklists[section.settings.menu_2].title }}</h3>
 
         <ul class="no-bullets">
           {% for link in linklists[section.settings.menu_2].links %}
@@ -22,7 +27,19 @@
       </div>
 
       <div class="col">
-        <ul class="inline-list">
+        <h3 class="heading-5">{{ linklists[section.settings.menu_3].title }}</h3>
+
+        <ul class="no-bullets">
+          {% for link in linklists[section.settings.menu_3].links %}
+            <li><a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <ul class="inline-list footer-socials">
           {% if section.settings.facebook_link != blank %}
             <li>
               <a href="{{ section.settings.facebook_link }}" target="_blank" title="Facebook Link">
@@ -47,27 +64,40 @@
             </li>
           {% endif %}
         </ul>
-      </div>
 
-      {% if section.settings.klaviyo_list_id != blank %}
-        <div class="col">
-          <h3>{{ section.settings.newsletter_title }}</h3>
-          {% render 'newsletter-form' with list_id: section.settings.klaviyo_list_id %}
+        <div class="site-footer__copyright">
+          <small>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}</small>
         </div>
-      {% endif %}
-
-      <div class="site-footer__copyright col">
-        <small>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}</small>
       </div>
     </div>
   </div>
 </footer>
 
+{% style %}
+  .footer {
+    --background-color: {{ section.settings.bg_color }};
+  }
+{% endstyle %}
+
 {% schema %}
   {
     "name": "Footer",
     "settings": [
-      FRAGMENT.color-scheme,
+      FRAGMENT.bg-color("#F4F4F4"),
+      {
+        "type": "header",
+        "content": "Brand Info"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "textarea",
+        "id": "copy",
+        "label": "Copy"
+      },
       {
         "type": "header",
         "content": "Menus"
@@ -85,20 +115,10 @@
         "default": "footer"
       },
       {
-        "type": "header",
-        "content": "Newsletter"
-      },
-      {
-        "type": "text",
-        "id": "newsletter_title",
-        "label": "Title",
-        "default": "Newsletter"
-      },
-      {
-        "type": "text",
-        "id": "klaviyo_list_id",
-        "label": "Klaviyo List ID",
-        "default": "WjpuMv"
+        "type": "link_list",
+        "id": "menu_3",
+        "label": "Menu 3",
+        "default": "footer"
       },
       {
         "type": "header",
