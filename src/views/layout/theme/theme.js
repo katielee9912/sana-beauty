@@ -13,6 +13,8 @@ import '@scripts/core/popup-elements'
 // Components
 import '@scripts/components/required-validation'
 import '@scripts/components/dropdown-select'
+import '@scripts/components/accessible-swiper'
+import '@scripts/components/swiper-slides-in-view'
 
 // Cart
 import '@scripts/cart/cart-api'

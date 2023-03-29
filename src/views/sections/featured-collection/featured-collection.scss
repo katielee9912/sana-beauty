@@ -14,71 +14,58 @@
 .featured-collection__container {
   position: relative;
   overflow: hidden;
+  gap: 40px;
 }
 
-.featured-collection__articles {
+.featured-collection__slides {
+  position: relative;
   width: 100%;
   overflow: visible;
 
-  .swiper-wrapper {
-    height: auto;
-    gap: 24px;
-  }
-
-  .mobile-carousel {
-    @include media-query($max, $medium) {
-      gap: 0;
-
-      .featured-collection__article {
-        min-width: 240px;
-      }
-    }
-  }
-}
-
-.featured-collection__article {
-  .article-image {
-    position: relative;
-
-    img {
-      aspect-ratio: 5/4;
-      object-fit: cover;
-      object-position: center;
-
-      @include media-query($min, $medium) {
-        aspect-ratio: 1;
-      }
-    }
-  }
-
-  .article-tag {
-    padding: 2px 12px;
-    background-color: black;
-    color: white;
-    text-transform: uppercase;
-  }
-
-  .article-button {
-    text-decoration: underline;
+  .swiper-slide {
+    max-width: 250px;
   }
 }
 
 .featured-collection__navigation {
   position: absolute;
   z-index: 10;
-  top: 30%;
+  top: 50%;
+  left: 0;
   width: 100%;
 
   .swiper-button-prev svg,
   .swiper-button-next svg {
     border-radius: 100%;
     background: $color-white;
-    box-shadow: 0 0 5px 7px $color-white;
   }
 
+  .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
-    right: 0;
+    height: 64px;
+    padding: 16px;
+    transform: translateY(-50%);
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+  .swiper-button-next {
+    right: 10px;
+  }
+
+  @include media-query($min, $medium) {
+    .swiper-button-prev {
+      left: 30px;
+    }
+    .swiper-button-next {
+      right: 30px;
+    }
+  }
+
+  .swiper-button-disabled {
+    opacity: 0.3;
   }
 }
 
@@ -91,5 +78,9 @@
     border-color: var(--cta-border-color-hover);
     background-color: var(--cta-bg-color-hover);
     color: var(--cta-text-color-hover);
+  }
+
+  @include media-query($max, $medium) {
+    width: 100%;
   }
 }
