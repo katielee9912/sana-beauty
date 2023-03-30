@@ -5,10 +5,10 @@
 .accordion {
   display: block;
   box-sizing: content-box;
-  border-top: 2px solid $color-black;
+  border-top: 1px solid $color-black;
 
   &:last-of-type {
-    border-bottom: 2px solid $color-black;
+    border-bottom: 1px solid $color-black;
   }
 
   &.animating {
@@ -30,9 +30,9 @@
   cursor: pointer;
 
   svg {
-    width: 26px;
-    height: 26px;
-    margin-top: 2px;
+    width: 20px;
+    height: 20px;
+    margin: 2px 5px 0;
     float: right;
   }
 

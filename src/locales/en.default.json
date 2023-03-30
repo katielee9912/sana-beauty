@@ -62,6 +62,7 @@
   },
   "collections": {
     "general": {
+      "all_collections": "All collections",
       "no_matches": "Sorry, there are no products in this collection",
       "link_title": "Browse our {{ title }} collection",
       "quick_view": "Quickview",
@@ -76,8 +77,8 @@
       "clear_all": "Clear All",
       "clear_filters": "Clear Filters",
       "show_products": "Show Products",
-      "from": "from",
-      "to": "to"
+      "from": "From",
+      "to": "To"
     },
     "sorting": {
       "title": "Sort by",

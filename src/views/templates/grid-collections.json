@@ -1,7 +1,7 @@
 {
   "sections": {
     "main": {
-      "type": "list-collections",
+      "type": "grid-collections",
       "settings": {
       }
     }

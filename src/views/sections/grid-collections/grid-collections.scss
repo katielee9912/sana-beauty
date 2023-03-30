@@ -1,0 +1,41 @@
+/* Helpers */
+@import '~@styles/helpers/variables';
+@import '~@styles/helpers/mixins';
+@import '~@styles/helpers/functions';
+
+/* ============================================================================
+  Grid Collections
+============================================================================== */
+
+.grid-collections {
+  margin: 40px 0 60px;
+}
+
+.grid-collections__grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 40px;
+  gap: 25px;
+}
+
+.grid-collections__grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 7px;
+  background-color: var(--background-color);
+
+  h2 {
+    margin-top: 16px;
+  }
+}
+
+.grid-collections__grid-image {
+  position: relative;
+  aspect-ratio: 1;
+
+  img {
+    z-index: 1;
+  }
+}
