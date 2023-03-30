@@ -33,12 +33,19 @@
     }
   }
 
-  h2 {
-    margin-bottom: 14px;
-  }
+  .main-col {
+    h2 {
+      margin-bottom: 14px;
+    }
 
-  .p--small {
-    max-width: 90%;
+    .p--small {
+      margin-bottom: 30px;
+
+      @include media-query($min, $medium) {
+        max-width: 90%;
+        margin-bottom: 10px;
+      }
+    }
   }
 
   h3 {

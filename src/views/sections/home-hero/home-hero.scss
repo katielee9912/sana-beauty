@@ -39,13 +39,6 @@
       @include typography(68, 70, $weight-bold);
     }
   }
-
-  p,
-  a {
-    @include media-query($max, $medium) {
-      @include typography(17, 24, $weight-bold);
-    }
-  }
 }
 
 .home-hero__button {

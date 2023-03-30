@@ -108,11 +108,29 @@
         "padding_bottom": "default",
         "padding_bottom_mobile": "default"
       }
+    },
+    "c8f3c617-c551-4f3e-8d32-b9657483d208": {
+      "type": "content-block",
+      "settings": {
+        "preheader": "Let's keep in touch",
+        "title": "Our Newsletter",
+        "copy": "If you want to be the first to know about our latest sales, products, and special promotions, then sign up for our newsletter! We'll send you insider info straight to your inbox. To join our community, simply enter your email below and hit \"Subscribe\". We love to see you  here.",
+        "bg_color": "#f3f3f3",
+        "margin_top": "64px",
+        "margin_top_mobile": "48px",
+        "margin_bottom": "default",
+        "margin_bottom_mobile": "default",
+        "padding_top": "default",
+        "padding_top_mobile": "default",
+        "padding_bottom": "default",
+        "padding_bottom_mobile": "default"
+      }
     }
   },
   "order": [
     "home-hero",
     "54f2fa59-c80c-49ba-a1f9-f030a7cf8201",
-    "9e13b404-f430-4197-9df5-9c5787f78dd5"
+    "9e13b404-f430-4197-9df5-9c5787f78dd5",
+    "c8f3c617-c551-4f3e-8d32-b9657483d208"
   ]
 }
