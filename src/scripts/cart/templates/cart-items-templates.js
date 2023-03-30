@@ -25,7 +25,7 @@ export const cartItemTemplate = (item, childBundleProducts, isSoftBundleProduct)
 
       <div class="cart-item__info-holder">
         <a href="${itemURL}" class="cart-item__link">
-          <h4 class="cart-item__title heading-5">${itemTitle}</h4>
+          <p class="cart-item__title">${itemTitle}</p>
         </a>
 
         ${!item.variant_title || isSoftBundleProduct ? '' : `<p class="cart-item__variant-title">${item.variant_title}</p>`}

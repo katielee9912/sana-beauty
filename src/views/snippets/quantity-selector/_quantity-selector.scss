@@ -11,7 +11,7 @@
   display: flex;
   position: relative;
   align-items: center;
-  width: 100px;
+  width: 130px;
   border: 1px solid $color-black;
 
   input,
@@ -34,9 +34,9 @@
   padding: 0;
   border: none;
   background: none;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 1;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.5rem;
   text-align: center;
   -moz-appearance: textfield !important; /* stylelint-disable-line */
   appearance: none;

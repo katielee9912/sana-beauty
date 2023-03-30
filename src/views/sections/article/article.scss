@@ -4,33 +4,27 @@
 @import '~@styles/helpers/functions';
 
 /* ============================================================================
-  Blog
+  Article
 ============================================================================== */
 
-.blog {
-  margin-bottom: 60px;
+.article {
+  margin: 40px 0 80px;
 
-  h2 {
+  h1 {
     margin-bottom: 20px;
-  }
-
-  .btn {
-    margin: 10px 0;
-  }
-
-  hr {
-    margin: 30px 0;
   }
 }
 
-.blog__title {
+.article__title {
   margin: 20px 0 40px;
 }
 
-.blog__image {
-  margin-bottom: 30px;
+.article__image {
+  position: relative;
+  aspect-ratio: 5/4;
 }
 
-.blog__meta {
+.article__meta {
+  margin-bottom: 22px;
   color: $color-grey;
 }

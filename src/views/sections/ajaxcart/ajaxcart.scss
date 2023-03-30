@@ -9,6 +9,7 @@
 
 .ajaxcart-drawer {
   max-width: 600px;
+  padding: 12px;
   background: $color-white;
 }
 
@@ -19,6 +20,7 @@
 
 .ajaxcart__header {
   position: relative;
+  margin-top: 12px;
   padding: $gutter;
 
   .ajaxcart__header-main {
