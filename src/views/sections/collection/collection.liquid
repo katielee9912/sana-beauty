@@ -72,27 +72,19 @@
             {% render 'collection-sorting' %}
           </div>
 
-          {% paginate collection.products by section.settings.items_per_page %}
-            {% if collection.products.size == 0 %}
-              <p class="collection__no-products">{{ 'collections.general.no_matches' | t }}</p>
-            {% else %}
-              <div class="collection__grid grid" style="--bs-gap: 24px 24px;">
-                {% for product in collection.products %}
-                  {% unless product.tags contains 'hidden' %}
-                    <div class="g-col-6 g-col-md-4">
-                      {% render 'collection-item', product: product, display_color_options: true %}
-                    </div>
-                  {% endunless %}
-                {% endfor %}
-              </div>
-
-              {% if paginate.pages > 1 %}
-                <collection-pagination data-collection-pagination="{{ section.id }}">
-                  {% render 'pagination', paginate: paginate %}
-                </collection-pagination>
-              {% endif %}
-            {% endif %}
-          {% endpaginate %}
+          {% if collection.products.size == 0 %}
+            <p class="collection__no-products">{{ 'collections.general.no_matches' | t }}</p>
+          {% else %}
+            <div class="collection__grid grid" style="--bs-gap: 34px 24px;">
+              {% for product in collection.products %}
+                {% unless product.tags contains 'hidden' %}
+                  <div class="g-col-6 g-col-md-4">
+                    {% render 'product-card', product: product %}
+                  </div>
+                {% endunless %}
+              {% endfor %}
+            </div>
+          {% endif %}
         </filtered-collection-display>
       </div>
     </div>

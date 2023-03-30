@@ -52,9 +52,9 @@
     -%}
   </a>
 
-  <h4>
+  <h3 class="p p--large">
     <a href="{{ product.url | within: collection }}" title="{{ product.title }} - {{ product.price | money }}">{{ product.title }}</a>
-  </h4>
+  </h3>
 
   {%- liquid
     if display_color_options

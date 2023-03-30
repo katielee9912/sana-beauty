@@ -1,0 +1,42 @@
+<script src="{{ 'grid-collections.js' | asset_url }}" defer="defer"></script>
+{{ 'grid-collections.css' | asset_url | stylesheet_tag }}
+
+<div class="grid-collections" role="region">
+  <div class="container">
+    <h1 class="heading-2 text-center">
+      {{ 'collections.general.all_collections' | t }}
+    </h1>
+
+    <div class="grid-collections__grid-container">
+      {% for collection in collections %}
+        {% unless collection.handle == 'frontpage' %}
+          {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+
+          <a href="{{ collection.url }}"
+            title="{{ 'collections.general.link_title' | t: title: collection_title }}"
+            class="grid-collections__grid-item grid-collections__grid-item-{{ forloop.index }}"
+          >
+            <div class="grid-collections__grid-image">
+              {% render 'image', image: collection.featured_image, background: true %}
+            </div>
+
+            <h2 class="heading-5 text-center">
+              {{ collection_title }}
+            </h2>
+
+          </a>
+          {% capture colors %}
+            {% cycle '#F6EFF5', '#F8F3E7', '#EEF6F3' %}
+          {% endcapture %}
+          {% assign color = colors | remove: "'" %}
+
+          {% style %}
+            .grid-collections__grid-item-{{ forloop.index }} {
+              --background-color: {{ color }};
+            }
+          {% endstyle %}
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
