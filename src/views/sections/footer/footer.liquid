@@ -1,7 +1,7 @@
 <footer class="site-footer medium-down--text-center" role="contentinfo" aria-label="Site Footer">
   <div class="container">
     <div class="row">
-      <div class="col-5">
+      <div class="main-col col-12 col-md-5 text-center text-md-left">
         <h2 class="heading-3">{{ section.settings.title }}</h2>
         <p class="p--small">{{ section.settings.copy }}</p>
       </div>
@@ -39,7 +39,7 @@
 
     <div class="row">
       <div class="col">
-        <ul class="inline-list footer-socials">
+        <ul class="inline-list footer-socials text-center text-md-left">
           {% if section.settings.facebook_link != blank %}
             <li>
               <a href="{{ section.settings.facebook_link }}" target="_blank" title="Facebook Link">
@@ -65,7 +65,7 @@
           {% endif %}
         </ul>
 
-        <div class="site-footer__copyright">
+        <div class="site-footer__copyright text-center text-md-left">
           <small>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}</small>
         </div>
       </div>
@@ -74,7 +74,7 @@
 </footer>
 
 {% style %}
-  .footer {
+  .site-footer {
     --background-color: {{ section.settings.bg_color }};
   }
 {% endstyle %}

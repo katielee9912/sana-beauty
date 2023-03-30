@@ -183,14 +183,15 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "color_scheme": "background-1",
+          "bg_color": "#F4F4F4",
+          "title": "SANA BEAUTY",
+          "copy": "At Sana Beauty, we believe that healthy, radiant skin is the foundation of true beauty. That's why we've created a line of innovative, high-quality skincare and makeup products that are designed to nourish, illuminate, and protect your skin.",
           "menu_1": "footer",
-          "menu_2": "footer",
-          "newsletter_title": "Newsletter",
-          "klaviyo_list_id": "WjpuMv",
-          "facebook_link": "",
-          "instagram_link": "",
-          "twitter_link": ""
+          "menu_2": "my-account",
+          "menu_3": "footer-menu-2",
+          "facebook_link": "facebook.com",
+          "instagram_link": "instagram.com",
+          "twitter_link": "twitter.com"
         }
       }
     },
