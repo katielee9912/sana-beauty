@@ -8,21 +8,41 @@
 @import '~@snippets/product-media-item/product-media-item';
 @import '~@snippets/back-in-stock-form/back-in-stock-form';
 
+.product__container {
+  margin: 40px auto 60px;
+}
+
 .product-content {
   @include media-query($min, $medium) {
     padding-top: 32px;
   }
 }
 
+.product-rating {
+  margin-top: 10px;
+}
+
 .product-content-block {
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 
   &:last-child {
     margin-bottom: 0;
   }
 }
 
-.product-price {
-  display: flex;
-  gap: 12px;
+.product__price {
+  margin-top: 10px;
+
+  .sale-price {
+    color: $color-sale;
+  }
+
+  .compare-price {
+    margin-left: 4px;
+    color: $color-grey;
+  }
+}
+
+.product-form {
+  margin-top: 20px;
 }

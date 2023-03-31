@@ -34,14 +34,26 @@
     }
   }
 
+  .product-media-item {
+    background-color: $color-bg-champagne;
+  }
+
   .swiper-pagination-thumbnail {
     display: block;
+    position: relative;
     width: 64px;
+    height: 104px;
     margin: 0 4px 8px;
     border: 1px solid rgba($color-black, 0.15);
 
     img {
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     &.swiper-pagination-bullet-active,
@@ -53,6 +65,10 @@
   .swiper-pagination-thumbnail--slide {
     width: 100px;
     height: auto;
+  }
+
+  .swiper-pagination {
+    margin-top: 16px;
   }
 }
 

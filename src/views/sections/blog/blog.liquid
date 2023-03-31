@@ -11,22 +11,22 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
-          <h1 class="text-center">{{ blog.title }}</h1>
+          <h1 class="blog__title heading-2 text-center">{{ blog.title }}</h1>
 
           {% for article in blog.articles %}
             <div class="blog__article">
               {% if article.image %}
-                <a class="image-link" href="{{ article.url }}" title="{{ article.title }}">
+                <a class="blog__image image-link" href="{{ article.url }}" title="{{ article.title }}">
                   {% render 'image', image: article.image %}
                 </a>
               {% endif %}
 
-              <h4>
+              <h2 class="heading-4">
                 <a href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a>
-              </h4>
+              </h2>
 
               {% capture date %}{{ article.published_at | time_tag: format: 'month_day_year' }}{% endcapture %}
-              <p>{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</p>
+              <p class="blog__meta">{{ 'blogs.article.author_on_date_html' | t: author: article.author, date: date }}</p>
 
               <div class="rte">
                 {% if article.excerpt.size > 0 %}
@@ -36,7 +36,7 @@
                 {% endif %}
               </div>
 
-              <a href="{{ article.url }}" title="{{ article.title }} {{ 'blogs.article.read_more' | t }}">{{ 'blogs.article.read_more' | t }} &rarr;</a>
+              <a href="{{ article.url }}" title="{{ article.title }} {{ 'blogs.article.read_more' | t }}" class="btn">{{ 'blogs.article.read_more' | t }} &rarr;</a>
             </div>
 
             {% unless forloop.last %}<hr>{% endunless %}

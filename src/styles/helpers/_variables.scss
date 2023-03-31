@@ -8,7 +8,8 @@ $small-medium: 550px;
 $medium: 750px;
 $large: 1025px;
 $xlarge: 1400px;
-$xxlarge: 2000px;
+$xxlarge: 1700px;
+$xxxlarge: 2000px;
 $viewport-increment: 1px;
 $pre-medium: $medium - $viewport-increment;
 $pre-large: $large - $viewport-increment;
@@ -28,6 +29,7 @@ $color-btn-primary: #000;
 $color-btn-primary-text: #fff;
 $color-btn-primary-hover: transparent;
 $color-btn-primary-text-hover: #000;
+$color-bg-champagne: #f8f3e7;
 
 // Secondary colors
 $color-secondary: #ccc;

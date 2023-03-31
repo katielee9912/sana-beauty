@@ -1,6 +1,6 @@
 <form
   id="newsletter-form-{{ section.id }}"
-  class="newsletter-form klaviyo_gdpr_embed_{{ list_id }}"
+  class="newsletter-form"
   action="//manage.kmail-lists.com/subscriptions/subscribe"
   data-ajax-submit="//manage.kmail-lists.com/ajax/subscriptions/subscribe"
   method="GET" target="_blank" role="form" aria-label="Newsletter Signup"
@@ -40,22 +40,3 @@
     <div class="error_message" style="display: none;"></div>
   </div>
 </form>
-
-<script type="text/javascript" src="//www.klaviyo.com/media/js/public/klaviyo_subscribe.js"></script>
-
-<script type="text/javascript">
-  KlaviyoSubscribe.attachToForms('#newsletter-form-{{ section.id }}', {
-    hide_form_on_success: false,
-    custom_success_message: true,
-    extra_properties: {
-      $source: '$embed',
-      $method_type: "Klaviyo Form",
-      $method_id: 'embed'
-    },
-    success: function () {
-      const form = document.querySelector('#newsletter-form-{{ section.id }}');
-      form.querySelector('[data-newsletter-form-submit]').disabled = true;
-      form.querySelector('[data-newsletter-form-email]').disabled = true;
-    }
-  });
-</script>

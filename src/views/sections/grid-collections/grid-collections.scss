@@ -13,9 +13,13 @@
 
 .grid-collections__grid-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-top: 40px;
   gap: 25px;
+
+  @include media-query($min, $medium) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .grid-collections__grid-item {

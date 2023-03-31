@@ -32,7 +32,7 @@
   data-product-handle="{{ product.handle }}"
   data-section-id="{{ section.id }}"
 >
-  <div class="container">
+  <div class="product__container container">
     <div class="row {% if desktop_content_position == 'left' %}flex-md-row-reverse{% endif %}">
       <div class="col-md-6 {% if desktop_content_position == 'left' %}offset-sw-1{% endif %}">
         <div class="product-gallery-carousel {% if desktop_gallery_type != 'carousel' %}d-md-none{% endif %}">
@@ -67,36 +67,46 @@
           {% for block in section.blocks %}
             <div class="product-content-block product-content-block--{{ block.type }}">
               {% if block.type == 'title' %}
-                {% render 'product-star-rating', type: 'product', product: product %}
+                <h1 class="product__title heading-2">
+                  {% if product.variants.size > 1 %}
+                    {% assign title = product.title | append: ' - ' | append: product.selected_or_first_available_variant.title %}
+                  {% else %}
+                    {% assign title = product.title %}
+                  {% endif %}
+                  {{ title }}
+                </h1>
 
-                <h1 class="product__title heading-2">{{ product.title }}</h1>
+                {% render 'star-rating', rating: product.metafields.custom.rating %}
 
                 <div class="product__meta">
-                  <div class="product-price">
-                    <div class="product-price__price" data-product-price>
-                      {{- variant.price | money -}}
-                    </div>
+                  <div class="product__price p--large">
+                    {% assign original_price = product.price | money %}
+                    {% assign sale_price = product.compare_at_price | money %}
 
-                    {% assign original_price = variant.compare_at_price | money %}
-                    {% assign sale_price = variant.price | money %}
-                    <div class="product-price__compare-price {% unless variant.compare_at_price > variant.price %}d-none{% endunless %}"
-                      data-product-compare-price-wrap
-                    >
-                      <span class="visually-hidden">
-                        {{- 'general.accessibility.original_price' | t -}}
+                    {% if sale_price != blank or sale_price == original_price %}
+                      <span class="sale-price">
+                        {{- product.price | money -}}
                       </span>
 
-                      <s aria-hidden="true" class="product__price product__price--compare" data-product-compare-price>
-                        {{- variant.compare_at_price | money -}}
-                      </s>
-                    </div>
+                      <span class="compare-price">
+                        <span class="visually-hidden">
+                          {{- 'general.accessibility.original_price' | t -}}
+                        </span>
+                        <s aria-hidden="true">
+                          {{- sale_price -}}
+                        </s>
+                      </span>
+                    {% else %}
+
+                      {{- product.price | money -}}
+                    {% endif %}
                   </div>
                 </div>
               {% endif %}
 
               {% if block.type == 'description' and product.description != blank %}
                 <div class="product-description rte">
-                  <h3 class="product-description__title heading-s">{{ block.settings.product_desc_title }}</h3>
+                  <p class="product-description__title p--large"><strong>{{ block.settings.product_desc_title }}</strong></p>
                   <div class="product-description__content p--large">
                     {{ product.description }}
                   </div>
@@ -141,7 +151,8 @@
                   </fieldset>
                 {% endif %}
 
-                {% if block.settings.display_product_options == true %}
+                {% if block.settings.display_product_options == true and product.metafields.custom.mask_types != blank %}
+                  <strong>Mask Types</strong>
                   {% render 'product-options',
                     display_low_stock: true,
                     product: product,
