@@ -9,12 +9,17 @@
 
 .featured-collection {
   position: relative;
+  overflow: hidden;
 }
 
 .featured-collection__container {
   position: relative;
   overflow: hidden;
-  gap: 40px;
+  gap: 14px;
+
+  @include media-query($min, $medium) {
+    gap: 40px;
+  }
 }
 
 .featured-collection__slides {

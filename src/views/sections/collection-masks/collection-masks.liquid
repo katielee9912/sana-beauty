@@ -68,7 +68,13 @@
           data-section-id="{{ section.id }}"
         >
           <div class="collection-header">
-            <span data-collection-product-count>{{ 'collections.general.product_count' | t: count: collection.products_count }}</span>
+            {%- liquid
+              assign variants_count = 0
+              for product in collection.products
+                assign variants_count = variants_count | plus: product.variants.size
+              endfor
+            -%}
+            <span data-collection-product-count>{{ 'collections.general.product_count' | t: count: variants_count }}</span>
             {% render 'collection-sorting' %}
           </div>
 

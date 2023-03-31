@@ -10,6 +10,17 @@
 .home-hero {
   position: relative;
   padding: 100px 0;
+  overflow: hidden;
+
+  .background-image {
+    object-position: top;
+  }
+
+  @include media-query($min, $xxlarge) {
+    .background-image {
+      object-position: 50% 20%;
+    }
+  }
 }
 
 .home-hero__content {

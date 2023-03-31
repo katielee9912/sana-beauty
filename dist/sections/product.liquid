@@ -151,7 +151,7 @@
                   </fieldset>
                 {% endif %}
 
-                {% if block.settings.display_product_options == true %}
+                {% if block.settings.display_product_options == true and product.metafields.custom.mask_types != blank %}
                   <strong>Mask Types</strong>
                   {% render 'product-options',
                     display_low_stock: true,

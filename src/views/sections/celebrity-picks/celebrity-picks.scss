@@ -8,16 +8,25 @@
 ============================================================================== */
 
 .celebrity-picks {
+  display: block;
   background: linear-gradient(
     90deg,
     rgb(255, 233, 239) 0%,
     rgb(205, 226, 251) 100%
   );
+
+  .swiper-slide {
+    min-width: 250px;
+  }
 }
 
 .celebrity-picks__wrapper {
   display: flex;
   justify-content: center;
+
+  @include media-query($min, $large) {
+    max-height: 800px;
+  }
 }
 
 .celebrity-picks__container {
@@ -33,16 +42,17 @@
   padding: 20px;
   gap: 12px;
 
-  @include media-query($min, $medium) {
+  @include media-query($min, $large) {
     max-width: 600px;
     padding: 40px 40px 40px 20px;
+    overflow: inherit;
   }
 
   .celebrity-picks__copy {
     width: 100%;
     font-style: italic;
 
-    @include media-query($min, $medium) {
+    @include media-query($min, $large) {
       width: 85%;
     }
   }
@@ -50,7 +60,6 @@
 
 .celebrity-picks__products {
   display: flex;
-  gap: 12px;
   justify-content: stretch;
 }
 
@@ -70,7 +79,7 @@
   position: relative;
   aspect-ratio: 3/4;
 
-  @include media-query($min, $medium) {
+  @include media-query($min, $large) {
     aspect-ratio: 2/3;
   }
 
@@ -91,11 +100,54 @@
 .celebrity-picks__image {
   position: relative;
   flex: 1;
-  max-height: 800px;
   aspect-ratio: 1;
 
   img {
     z-index: 1;
     object-position: top;
+  }
+}
+
+.celebrity-picks__navigation {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 0;
+  width: 100%;
+
+  .swiper-button-prev svg,
+  .swiper-button-next svg {
+    border-radius: 100%;
+    background: $color-white;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: absolute;
+    height: 64px;
+    padding: 16px;
+    transform: translateY(-50%);
+  }
+
+  .swiper-button-prev {
+    left: 10px;
+  }
+
+  .swiper-button-next {
+    right: 10px;
+  }
+
+  @include media-query($min, $large) {
+    .swiper-button-prev {
+      left: 30px;
+    }
+
+    .swiper-button-next {
+      right: 30px;
+    }
+  }
+
+  .swiper-button-disabled {
+    opacity: 0.3;
   }
 }
