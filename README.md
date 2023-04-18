@@ -3,7 +3,7 @@
 Welcome to my Sana Beauty repo!
 
 Store: https://sana-beauty-demo.myshopify.com/
-Pass: sanadev
+<br>Pass: sanadev
 
 Note that this shop is for demo purposes only.
 
