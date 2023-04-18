@@ -2,7 +2,8 @@
 
 Welcome to my Sana Beauty repo!
 
-All of the nitty-gritty stuff has already taken care of with a bare bones base.
+Store: https://sana-beauty-demo.myshopify.com/
+Pass: sanadev
 
 Note that this shop is for demo purposes only.
 
